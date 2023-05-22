@@ -1,0 +1,13 @@
+
+<pre><code>
+LOADGEN=moongen
+
+
+apt-get update
+apt-get install -y libssl-dev
+git clone --branch dpdk-19.05 --recurse-submodules --jobs 4 https://github.com/emmericp/MoonGen "$LOADGEN"
+cd $LOADGEN/
+/root/$LOADGEN/build.sh
+/root/$LOADGEN/bind-interfaces.sh
+/root/$LOADGEN/setup-hugetlbfs.sh
+</code></pre>

@@ -1,0 +1,18 @@
+<pre><code>
+FORWARDER=libmoon
+
+prefix=$(hostname)
+# modify dpdk-lua.conf so that it grabs the right cores
+cat &lt;&lt;EOF > /root/$FORWARDER/dpdk-conf.lua
+DPDKConfig {
+  cores = 24,25,26,
+
+  forceNumaNode = 1,
+
+  cli = {
+    "--file-prefix", "$prefix",
+    "--socket-mem", "512,512,512,512",
+  }
+}
+EOF
+</code></pre>

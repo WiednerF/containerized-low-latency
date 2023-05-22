@@ -1,0 +1,12 @@
+<pre><code>
+GIT_REPO='https://github.com/libmoon/libmoon.git'
+GIT_BRANCH='dpdk-19.05'
+FORWARDER=libmoon
+
+git clone --branch "$GIT_BRANCH" --recurse-submodules --jobs 4 "$GIT_REPO" "$FORWARDER"
+cd $FORWARDER/
+/root/$FORWARDER/build.sh
+/root/$FORWARDER/bind-interfaces.sh
+/root/$FORWARDER/setup-hugetlbfs.sh
+
+</code></pre>

@@ -1,0 +1,22 @@
+<pre><code>
+cat > "~/net.xml" <<-EOF
+&lt;network&gt;&lt;name&gt;net&lt;/name&gt;&lt;forward dev='ens2' mode='bridge'&gt;
+&lt;interface dev='ens2' /&gt;&lt;/forward&gt;&lt;/network&gt;
+EOF
+
+virsh net-define net.xml;
+virsh net-start net;
+
+virt-install --cpu host-passthrough --memory 14000 --vcpus=3 --cpuset=24-26 
+<i class="bi bi-arrow-return-right"></i> --boot=network --name vm1 --nodisks 
+<i class="bi bi-arrow-return-right"></i> --network='network=net,mac=52:53:00:00:01,model=virtio' 
+<i class="bi bi-arrow-return-right"></i> --host-device net_enp33s0f1_68_05_ca_39_5f_b1
+<i class="bi bi-arrow-return-right"></i> --host-device net_enp100s0f1_68_05_ca_3a_a3_5d
+<i class="bi bi-arrow-return-right"></i> --noautoconsole --graphics none --dry-run
+<i class="bi bi-arrow-return-right"></i> --controller='type=usb,model=none' --print-xml --console 'pty,target_type=virtio' > vm1.xml
+
+virsh define vm1.xml
+
+vbmc add --username ADMIN --password password --port 6001 container1;vbmc start container1
+
+</code></pre>

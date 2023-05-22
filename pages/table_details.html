@@ -1,0 +1,63 @@
+---
+# front matter tells Jekyll to process Liquid
+---
+<!DOCTYPE html>
+<html class=" js no-touch svg inlinesvg svgclippaths no-ie8compat" style="">
+  {% include head.html %}
+  <body class="homepage homepage_index">
+    {% include header.html %}
+    <main class="content container" role="main">
+        <div class="content-row">
+    	{% include nav.html %}
+    	    	 <article class="inner-content">
+          <div class="inner-content">
+						<h1  id="the-chair-of-br-network-architectures-and-services">Table III</h1>
+						<h5>Table</h5>
+
+						<p><table class="table  table-striped">
+							    <tr>
+								<td  scope="col">Technology</td>
+								<td  scope="col">non-optimized vanilla</td>
+								<td  scope="col">optimized RT</td>
+							    </tr>
+							    <tr>
+								<td  scope="row">Container kernel-space</td>
+								<td>9969.08 μs</td>
+								<td>100.19 μs</td>
+							    </tr>
+							    <tr>
+								<td  scope="row">Container user-space</td>
+								<td>659.25 μs</td>
+								<td>108.86 μs</td>
+							    </tr>
+							    <tr>
+								<td  scope="row">VM</td>
+								<td>840.63 μs</td>
+								<td>124.12 μs</td>
+							    </tr>
+							    <tr>
+								<td  scope="row">Bare-metal</td>
+								<td>1077.44 μs</td>
+								<td>101.81 μs</td>
+							    </tr>
+							</table></p>
+
+						<h3>Reproducibility</h3>
+
+						<p>The data can be reproduced using the reproducibility steps for the following Figures:<p>
+
+						<ul>
+							<li><a href="{{ site.baseurl }}/pages/container.html">Figure 4</a>: Container Measurements with user-space-processing</li>
+							<li><a href="{{ site.baseurl }}/pages/vm.html">Figure 8</a>: VM Measurements with user-space-processing</li>
+							<li><a href="{{ site.baseurl }}/pages/bare-metal.html">Figure 9</a>: Bare-metal Measurements with user-space-processing</li>
+							<li><a href="{{ site.baseurl }}/pages/user.html">Figure 10</a>: Container Measurements with kernel-space-processing</li>
+						</ul>
+
+<div class="fadein">
+            </div>
+          </div>
+        </article>
+      </div>
+    </main>
+    {% include footer.html %}
+</body></html>

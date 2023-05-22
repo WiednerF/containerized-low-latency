@@ -1,0 +1,15 @@
+
+<pre><code>
+# When using the precompiled CSV data, decompress them first and then put them into /root/results/data for generation of Figures
+
+# Copy required files for plotting
+cp -r ~/containierized-low-latency/scripts/evaluator/plotter/* ~/results
+
+cd ~/results
+mkdir figures
+
+python3 plotcreator.py figures data .
+make -i
+
+# All compiled figures are now available under ~/results/figures
+</code></pre>

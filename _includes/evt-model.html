@@ -1,0 +1,15 @@
+
+<pre><code>
+# Install dependencies
+apt install -y zstd
+pip install evt
+pip install sympy
+
+# Get EVT script
+The script is located at https://github.com/AnonymContainer/containerized-low-latency/blob/main/scripts/evt/evt-model.py
+
+python3 evt-model.py --data &lt;filename.csv.zst&gt;
+
+# Results are stored in &lt;filename.csv.evt.json&gt;
+# Plots of the MLE fitting in &lt;filename.csv.mle.pdf&gt;
+</code></pre>

@@ -1,0 +1,27 @@
+<pre><code>
+GIT_REPO='https://github.com/libmoon/libmoon.git'
+GIT_BRANCH='dpdk-19.05'
+FORWARDER=libmoon
+cd /root
+
+git clone --branch "$GIT_BRANCH" --recurse-submodules --jobs 4 "$GIT_REPO" "$FORWARDER"
+cd $FORWARDER/
+
+# build and load igb_uio
+cd deps/dpdk-kmods/linux/igb_uio
+make
+modprobe uio
+insmod igb_uio.ko
+
+cd /root/$FORWARDER/deps/dpdk/usertools/
+EXTERNAL_INTERFACES="enp33s0f1 enp100s0f1"
+IFS=" "
+for device_long in $(echo "$EXTERNAL_INTERFACES"); do
+  device=$(echo "$device_long" | awk -F '_' '{ print $2 }')
+  python dpdk-devbind.py --bind=igb_uio "$device"
+done
+unset IFS
+
+# create hugetable on the host. Those hugetables will be passed through to the container
+bash /root/$FORWARDER/setup-hugetlbfs.sh
+</code></pre>

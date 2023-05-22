@@ -1,0 +1,50 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Containing Low Tail-Latencies in Packet Processing Using Lightweight Virtualization
+email: wiedner@net.in.tum.de
+description: >- # this means to ignore newlines until "baseurl:"
+  Packet processing in today's network scenarios is complex and challenging.
+  Requirements such as low latency, high reliability, and resource sharing are becoming more prevalent.
+  One way to mitigate these challenges is the use of virtualization to enable resource sharing and on-demand provisioning. 
+  This is challenging when high reliability and ultra-low latency are key requirements.
+  Using bare-metal systems is infeasible in most cases, and virtual machines require a high amount of additional resources.
+  In this paper, we evaluate the use of containers as a potential lightweight solution for low-latency-aware packet processing.
+  Drawbacks and opportunities using container environments in low latency packet processing are pointed out.
+  We encourage the use of containers even in low-latency systems when the degree of isolation for customer data is sufficient and bare-metal systems are not affordable.
+  We show that containers achieve a similar latency performance with more predictable tail-latency behavior compared to bare-metal packet processing.
+  Furthermore, we show that the overhead caused by virtualization is negligible in tail-latencies.
+domain: "wiednerf.github.io"
+baseurl: "/containerized-low-latency" # the subpath of your site, e.g. /blog
+url: "https://wiednerf.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  wiednerf
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

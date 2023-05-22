@@ -1,0 +1,43 @@
+---
+# front matter tells Jekyll to process Liquid
+---
+<!DOCTYPE html>
+<html class=" js no-touch svg inlinesvg svgclippaths no-ie8compat" style="">
+  {% include head.html %}
+  <body class="homepage homepage_index">
+    {% include header.html %}
+    <main class="content container" role="main">
+        <div class="content-row">
+    	{% include nav.html %}
+    	 <article class="inner-content">
+          <div class="inner-content">
+    		<h1 id="the-chair-of-br-network-architectures-and-services">Reproducing Evaluation Results</h1>
+    		<p></p>
+    		<div class="card">
+		  <div class="card-header">
+		    Abstract
+		  </div>
+		  <div class="card-body">
+		    <p></p>
+		    <h5 class="card-title">Containing Low Tail-Latencies in Packet Processing Using Lightweight Virtualization</h5>
+		    <p class="card-text">Packet processing in current network scenarios is complex and challenging due to requirements, such as low latency, high reliability, and resource sharing that are increasingly prevalent.
+Virtualization is a potential solution to mitigate these challenges by enabling resource sharing and on-demand provisioning; however, ensuring high reliability and ultra-low latency is still a key challenge.
+Since bare-metal systems are impractical in most cases because of high cost and space usage, and virtual machines require substantial additional resources, we evaluate the utilization of containers as a potential lightweight solution for low-latency-enabled packet processing.
+Herein, we discuss the benefits and drawbacks and encourage the use of container environments in low-latency packet processing when the degree of isolation of customer data is adequate and bare metal systems are unaffordable.
+Our results demonstrate that containers achieve similar latency performance with more predictable tail-latency behavior than bare metal packet processing.
+Furthermore, we show that the overhead caused by virtualization is negligible in tail latencies.</p>
+		  </div>
+		</div>
+		<div class="m-4">
+		<p></p>
+		<p>This page contains all Scripts, links to the data, and information which allows to reproduce or further evaluate the data from the Paper "Containing low tail-latencies in packet processing using lightweight virtualization".</p>
+		<p>All scripts and raw data (for submission only a subset) can be found in the following repository: <a href="https://github.com/wiednerf/containerized-low-latency/tree/main"> https://github.com/wiednerf/containerized-low-latency/tree/main </a> </p>
+		</div>
+<div class="fadein">
+            </div>
+          </div>
+        </article>
+      </div>
+    </main>
+    {% include footer.html %}
+</body></html>
